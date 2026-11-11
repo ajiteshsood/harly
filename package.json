@@ -1,3 +1,4 @@
+
 {
   "name": "harly",
   "private": true,
@@ -7,33 +8,30 @@
   "engines": {
     "node": ">=22"
   },
-
-  
-"scripts": {
-  
-"dev": "corepack pnpm --version && corepack pnpm install --filter web... --no-frozen-lockfile --prod=false && node apps/web/scripts/godaddy-diagnose.cjs && corepack pnpm --filter web build && corepack pnpm --filter web start",
- "dev:web": "DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/turbo/bin/turbo dev --filter=web",
-  "build": "DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/turbo/bin/turbo build",
-  "start": "node ./node_modules/turbo/bin/turbo run start --filter=web",
-  "lint": "turbo lint",
-  "typecheck": "turbo typecheck",
-  "test": "turbo test",
-  "docs:dev": "pnpm --dir apps/docs dev",
-  "docs:validate": "pnpm --dir apps/docs validate",
-  "docs:broken-links": "pnpm --dir apps/docs broken-links",
-  "docs:a11y": "pnpm --dir apps/docs a11y",
-  "generate:openapi": "pnpm --filter web generate:openapi",
-  "clean": "rm -rf .next .turbo apps/*/.next apps/*/dist packages/*/dist tooling/*/dist",
-  "db:up": "docker compose -f tooling/docker/compose.dev.yml up -d",
-  "db:down": "docker compose -f tooling/docker/compose.dev.yml down",
-  "db:generate": "pnpm --filter @harly/db db:generate",
-  "db:migrate": "pnpm --filter @harly/db db:migrate",
-  "db:verify-migrations": "pnpm --filter @harly/db db:verify-migrations",
-  "db:studio": "pnpm --filter @harly/db db:studio",
-  "db:push": "pnpm --filter @harly/db db:push",
-  "db:seed": "pnpm --filter @harly/db db:seed",
-  "db:seed:demo": "pnpm --filter @harly/db db:seed:demo"
-},
+  "scripts": {
+    "dev": "corepack pnpm --version && corepack pnpm install --filter web... --no-frozen-lockfile --prod=false && node apps/web/scripts/godaddy-diagnose.cjs && corepack pnpm --filter web build && corepack pnpm --filter web start",
+    "dev:web": "DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/turbo/bin/turbo dev --filter=web",
+    "build": "DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/turbo/bin/turbo build",
+    "start": "node ./node_modules/turbo/bin/turbo run start --filter=web",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "docs:dev": "pnpm --dir apps/docs dev",
+    "docs:validate": "pnpm --dir apps/docs validate",
+    "docs:broken-links": "pnpm --dir apps/docs broken-links",
+    "docs:a11y": "pnpm --dir apps/docs a11y",
+    "generate:openapi": "pnpm --filter web generate:openapi",
+    "clean": "rm -rf .next .turbo apps/*/.next apps/*/dist packages/*/dist tooling/*/dist",
+    "db:up": "docker compose -f tooling/docker/compose.dev.yml up -d",
+    "db:down": "docker compose -f tooling/docker/compose.dev.yml down",
+    "db:generate": "pnpm --filter @harly/db db:generate",
+    "db:migrate": "pnpm --filter @harly/db db:migrate",
+    "db:verify-migrations": "pnpm --filter @harly/db db:verify-migrations",
+    "db:studio": "pnpm --filter @harly/db db:studio",
+    "db:push": "pnpm --filter @harly/db db:push",
+    "db:seed": "pnpm --filter @harly/db db:seed",
+    "db:seed:demo": "pnpm --filter @harly/db db:seed:demo"
+  },
   "devDependencies": {
     "dotenv": "^17.4.2",
     "drizzle-kit": "^0.31.10",
@@ -48,6 +46,11 @@
   },
   "packageManager": "pnpm@9.15.0",
   "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "better-sqlite3"
+      ]
+    },
     "overrides": {
       "@ai-sdk/provider-utils@>=4.0.0-beta.10 <4.0.33": "4.0.33",
       "@babel/core": "7.29.6",
