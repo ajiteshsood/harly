@@ -104,7 +104,6 @@
   },
   "devDependencies": {
     "@apidevtools/swagger-parser": "^12.1.0",
-    "@better-auth/cli": "^1.4.21",
     "@formatjs/icu-messageformat-parser": "3.5.23",
     "@playwright/test": "^1.51.1",
     "@tailwindcss/postcss": "^4",
