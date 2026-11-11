@@ -11,7 +11,7 @@
   
 "scripts": {
   
-"dev": "corepack pnpm --version && corepack pnpm install --filter web... --frozen-lockfile --prod=false && node apps/web/scripts/godaddy-diagnose.cjs && corepack pnpm --filter web build && corepack pnpm --filter web start",
+"dev": "corepack pnpm --version && corepack pnpm install --filter web... --no-frozen-lockfile --prod=false && node apps/web/scripts/godaddy-diagnose.cjs && corepack pnpm --filter web build && corepack pnpm --filter web start",
  "dev:web": "DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/turbo/bin/turbo dev --filter=web",
   "build": "DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/turbo/bin/turbo build",
   "start": "node ./node_modules/turbo/bin/turbo run start --filter=web",
